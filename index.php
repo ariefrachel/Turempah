@@ -1,4 +1,28 @@
+<?php
+include('db/config.php');
 
+// Lakukan query ke database
+$sql = mysqli_query($con, "SELECT * FROM tempat") or die(mysqli_error($con));
+
+$herbs = array();
+
+// Periksa apakah query berhasil dan ada data yang ditemukan
+if ($sql && mysqli_num_rows($sql) > 0) {
+    while ($data = mysqli_fetch_assoc($sql)) {
+        $herb = array(
+            'nama' => $data['nama'],
+            'path' => $data['gambar'],
+            'alamat' => $data['alamat'],
+            // Anda dapat menambahkan lebih banyak kolom data dari tabel tempat sesuai kebutuhan.
+        );
+        $herbs[] = $herb;
+    }
+} else {
+    // Tampilkan pesan jika data tidak ditemukan
+    echo '<p>Tidak ada data.</p>';
+    exit; // Keluar dari script
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +59,51 @@
   <main id="main">
     <?php include 'templates/landingpage/hero.php';?>
     <?php include 'templates/landingpage/about.php';?>
-    <?php include 'templates/landingpage/list.php';?>
+    
+
+    <section id="listtempat" class="herb-list" style="background-color: #fff;">
+        <div class="container" data-aos="fade-up">
+            <div class="section-header">
+                <div class="d-flex justify-content-between">
+                    <h1 data-aos="fade-up">Daftar Jalur Rempah</h1>
+                </div>
+            </div>
+            <div class="row">
+              <?php foreach ($herbs as $herb) { ?>
+              <!-- Di dalam loop foreach -->
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card" >
+                  <div class="card-img" style="background-image: url(static/img/map/thumb/<?php echo $herb['path']; ?>);">
+                      <div class="overlay">
+                          <div class="overlay-content">
+                              <a class="hover" href="#">Lihat Detail</a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card-content">
+                      <a href="#!">
+                          <h2><?php echo $herb['nama']; ?></h2>
+                          <p><?php echo $herb['alamat']; ?></p>
+                      </a>
+                  </div>
+              </div>
+              </div>
+
+
+              <?php } ?>
+            </div>
+        </div>
+    </section>
+
+<script>
+    $(document).ready(function () {
+        $('.card').delay(1800).queue(function (next) {
+            $(this).removeClass('hover');
+            $('a.hover').removeClass('hover');
+            next();
+        });
+    });
+</script>
   </main>
  
   <footer id="footer" class="footer">

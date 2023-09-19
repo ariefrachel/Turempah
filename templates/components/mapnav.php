@@ -6,6 +6,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../static/css/map/mapnav.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <style>
+      .locked-text {
+         color: gray !important;
+         opacity: .8;
+      }
+      .submenu-link:hover{
+         cursor: pointer;
+         color:#CD543A !important;
+      }
+    </style>
 </head>
 <body>
     <div class="navmap">
@@ -31,18 +41,17 @@
                           <div class="submenu-inner" >
                              <h4 class="submenu-title">Kota Tegal</h4>
                              <ul class="submenu-list" >
-                                <li class="submenu-item" data-lat="-6.8515864" data-lon="109.1287918"><a  href="#" class="submenu-link">Pelabuhan Jongor</a></li>
-
+                                <li class="submenu-item" data-lat="-6.8515864" data-lon="109.1287918"><a href="#" class="submenu-link locked-item">Pelabuhan Jongor</a></li>
                              </ul>
                              <br>
                              <h4 class="submenu-title">Demak</h4>
                              <ul class="submenu-list">
-                                <li class="submenu-item" data-lat="-6.8946499" data-lon="110.637289"><a class="submenu-link" href="#">Masjid Agung Demak</a></li>
+                                <li class="submenu-item" data-lat="-6.8946499" data-lon="110.637289"><a class="submenu-link locked-item" href="#">Masjid Agung Demak</a></li>
                              </ul>
                              <br>
                              <h4 class="submenu-title">Semarang</h4>
                              <ul class="submenu-list">
-                                <li class="submenu-item" data-lat="-6.9683012" data-lon="110.4284367"><a class="submenu-link" href="#">Kota Lama Semarang</a></li>
+                                <li class="submenu-item" data-lat="-6.9683012" data-lon="110.4284367"><a class="submenu-link locked-item" href="#">Kota Lama Semarang</a></li>
                              </ul>
                              
                           </div>
@@ -50,18 +59,18 @@
                              <h4 class="submenu-title">Brebes</h4>
                              <ul class="submenu-list">
                                 <li class="submenu-item" data-lat="-6.9061762" data-lon="108.9783136"><a href="#" class="submenu-link">Rest Area Banjaratma</a></li>
-                                <li class="submenu-item" data-lat="-6.886062" data-lon="108.8200917"><a href="#" class="submenu-link">Pasar Bawang Sengon</a></li>
+                                <li class="submenu-item" data-lat="-6.886062" data-lon="108.8200917"><a href="#" class="submenu-link locked-item">Pasar Bawang Sengon</a></li>
                                 <li class="submenu-item" data-lat="-6.8743005" data-lon="108.9203818"><a href="#" class="submenu-link">Pelabuhan Kluwut</a></li>
-                                <li class="submenu-item" data-lat="-6.8674085" data-lon="108.9805909"><a href="#" class="submenu-link">Lapak Bawang Luwungragi</a></li>
+                                <li class="submenu-item" data-lat="-6.8674085" data-lon="108.9805909"><a href="#" class="submenu-link locked-item">Lapak Bawang Luwungragi</a></li>
                              </ul>
                              <br>
                              <h4 class="submenu-title">Kab. Tegal</h4>
                              <ul class="submenu-list" >
-                                <li class="submenu-item" data-lat="-7.1638959" data-lon="109.140785"><a href="#" class="submenu-link">Learning Center Bawang Putih</a></li>
-                                <li class="submenu-item" data-lat="-7.1697392" data-lon="109.1388895"><a href="#" class="submenu-link">Penyulingan Cengkeh</a></li>
+                                <li class="submenu-item" data-lat="-7.1638959" data-lon="109.140785"><a href="#" class="submenu-link locked-item">Learning Center Bawang Putih</a></li>
+                                <li class="submenu-item" data-lat="-7.1697392" data-lon="109.1388895"><a href="#" class="submenu-link locked-item">Penyulingan Cengkeh</a></li>
                                 <li class="submenu-item" data-lat="-7.1038733" data-lon="109.1320071"><a href="#" class="submenu-link">Wisata Kesehatan Jamu Kalibakung</a></li>
-                                <li class="submenu-item" data-lat="-7.1718185" data-lon="109.1149315"><a href="#" class="submenu-link">Perkebunan Cengkeh Dukuh Pereng</a></li>
-                                <li class="submenu-item" data-lat="-7.1663593" data-lon="109.1315015"><a href="#" class="submenu-link">Perkebunan Cengkeh Bumijawa</a></li>
+                                <li class="submenu-item" data-lat="-7.1718185" data-lon="109.1149315"><a href="#" class="submenu-link locked-item">Perkebunan Cengkeh Dukuh Pereng</a></li>
+                                <li class="submenu-item" data-lat="-7.1663593" data-lon="109.1315015"><a href="#" class="submenu-link locked-item">Perkebunan Cengkeh Bumijawa</a></li>
                              </ul>
 
 
@@ -69,15 +78,16 @@
                           <div class="submenu-inner">
                             <h4 class="submenu-title">Pekalongan</h4>
                              <ul class="submenu-list">
-                                <li class="submenu-item" data-lat="-6.8926827" data-lon="109.6171926"><a href="#" class="submenu-link">Ayam Panggang H. Bari</a></li>
-                                <li class="submenu-item" data-lat="-6.8786839" data-lon="109.6755195"><a href="#" class="submenu-link">Museum Batik Pekalongan</a></li>
-                                <li class="submenu-item" data-lat="-6.8579016" data-lon="109.692065"><a href="#" class="submenu-link">Pelabuhan Perikanan Nusantara Pekalongan</a></li>
-                                <li class="submenu-item" data-lat="-6.8788489" data-lon="109.6765347"><a class="submenu-link" href="#">Cafe Limun Oriental Cap</a></li>
+                                <li class="submenu-item" data-lat="-6.8926827" data-lon="109.6171926"><a href="#" class="submenu-link locked-item">Ayam Panggang H. Bari</a></li>
+                                <li class="submenu-item" data-lat="-6.8786839" data-lon="109.6755195"><a href="#" class="submenu-link locked-item">Museum Batik Pekalongan</a></li>
+                                <li class="submenu-item" data-lat="-6.8579016" data-lon="109.692065"><a href="#" class="submenu-link locked-item">Pelabuhan Perikanan Nusantara Pekalongan</a></li>
+                                <li class="submenu-item" data-lat="-6.8788489" data-lon="109.6765347"><a class="submenu-link locked-item" href="#">Cafe Limun Oriental Cap</a></li>
                              </ul>
                           </div>
 
                        </div>
                     </li>
+                    <li class="menu-item"><a href="#" class="menu-link ">Marketplace</a></li>
                  </ul>
               </div>
            </section>

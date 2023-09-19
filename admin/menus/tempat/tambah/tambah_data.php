@@ -25,14 +25,14 @@ $data = mysqli_fetch_assoc($sql);
                 <input type="text" class="form-control" id="nama" name="nama" required>
             </div>
             <div class="mb-3">
+                <label for="alamat" class="form-label">Alamat:</label>
+                <input type="text" class="form-control" id="alamat" name="alamat" required>
+            </div>
+            <div class="mb-3">
                 <label for="profil" class="form-label">Profil:</label>
                 <textarea class="form-control" id="editor" name="profil" required data-ckeditor="true"></textarea>
             </div>
 
-            <div class="mb-3">
-                <label for="alamat" class="form-label">Alamat:</label>
-                <input type="text" class="form-control" id="alamat" name="alamat" required>
-            </div>
             <div class="mb-3">
                 <label for="rutemap" class="form-label">Rutemap:</label>
                 <input type="text" class="form-control" id="rutemap" name="rutemap" required>
@@ -60,7 +60,7 @@ $data = mysqli_fetch_assoc($sql);
  
         // Proses upload gambar
         $gambar = $_FILES['gambar']['name'];
-        $target_dir = "../../../../static/img/admin/tempat/";
+        $target_dir = "../../../../static/img/map/thumb/";
         $target_file = $target_dir . basename($gambar);
         move_uploaded_file($_FILES['gambar']['tmp_name'], $target_file);
 

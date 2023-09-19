@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 
             <div class="container-fluid shadow-sm p-2 mb-5 bg-body">
                 <div class="container d-flex align-items-center justify-content-between mt-5">
@@ -8,13 +8,13 @@
                 <nav class="navbar">
                     <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="admin/menus/tempat/tempat.php">Daftar Tempat</a></li>
-                        <li><a href="./menus/users/data_user.php">Data User</a></li>
+                        <li><a href="/tempat">Daftar Tempat</a></li>
+                        <li><a href="/users">Data User</a></li>
                     </ul>
                 </nav>
                 <nav id="navbar" class="navbar">
                     <ul>
-                        <li><a href="#">Logout</a></li> <!-- Tambahkan link untuk logout -->
+                        <li><a href="../admin/logout.php">Logout</a></li>
                     </ul>
                 </nav>
         

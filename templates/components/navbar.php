@@ -26,7 +26,7 @@ if(isset($_SESSION['username'])) {
         $userStatus = $row['transaction_status'];
 
         // Sekarang kita bisa memeriksa nilai 'status' dan menampilkan konten khusus jika 'status' adalah 2
-        if ($userStatus == 2) {
+        if ($userStatus == 3) {
             // Tampilkan konten khusus untuk 'status' 2
 ?>
             <div class="container-fluid shadow-sm p-2 mb-5 bg-body">

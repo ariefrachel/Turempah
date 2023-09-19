@@ -1,8 +1,38 @@
 <?php
 include('../../db/config.php');
 
-$sql = mysqli_query($con, "SELECT * FROM tempat") or die(mysqli_error($con));
-$data = mysqli_fetch_assoc($sql);
+// Periksa apakah parameter 'id' telah diterima
+if (isset($_GET['id'])) {
+    $tempatId = $_GET['id'];
+
+    // Query untuk mengambil data tempat berdasarkan ID
+    $sql = mysqli_query($con, "SELECT * FROM tempat WHERE id = $tempatId") or die(mysqli_error($con));
+
+    // Periksa apakah query berhasil dan ada data yang ditemukan
+    if ($sql && mysqli_num_rows($sql) > 0) {
+        $data = mysqli_fetch_assoc($sql);
+
+        // Ekstrak data dari hasil query
+        $nama = $data['nama'];
+        $alamat = $data['alamat'];
+        $deskripsi = $data['deskripsi'];
+        $gambar = $data['gambar'];
+
+        // Path ke direktori gambar
+        $gambarDir = '../../../static/img/map/thumb/';
+
+        // Menghasilkan path lengkap ke gambar
+        $gambarPath = $gambarDir . $gambar;
+    } else {
+        // Tampilkan pesan jika data tidak ditemukan
+        echo '<p>Data tidak ditemukan.</p>';
+        exit; // Keluar dari script
+    }
+} else {
+    // Jika parameter 'id' tidak diterima, tampilkan pesan error
+    echo '<p>ID tempat tidak ditemukan.</p>';
+    exit; // Keluar dari script
+}
 ?>
 
 <!DOCTYPE html>
@@ -13,70 +43,27 @@ $data = mysqli_fetch_assoc($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Profil</title>
-    <style>
-    body {
-        background: #f5f6f8;
-    }
-
-    h2,
-    h3,
-    p,
-    th,
-    td {
-        color: #333;
-    }
-
-    .bio {
-        width: 50%;
-        position: absolute;
-        top: 5%;
-        left: 25%;
-    }
-
-    .profil {
-        width: 800px;
-        height: auto;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
-        padding: 3em;
-    }
-    </style>
+    <link href="../../../static/css/main.css" rel="stylesheet">
+    <title>Detail Tempat</title>
 </head>
 
 <body>
-    <div class="bio">
-        <a href="tambah/tambah_data.php">
-            <button class="btn btn-primary" style="border:none">Tambah Data</button>
-        </a>
-        <div class="profil">
-            <?php
-                $sql = mysqli_query($con, "SELECT * FROM tempat ORDER BY id ASC") or die(mysqli_error($con));
-                if(mysqli_num_rows($sql) > 0) {
-                    $no = 1;
-                    while($data = mysqli_fetch_assoc($sql)) {
-                        echo '<h2>Nama</h2>';
-                        echo nl2br('<p class="p">'.$data['nama'].'</p>');
-                        echo "<h2>sejarah</h2>";
-                        echo nl2br('<p class="p">'.$data['profil'].'</p>');
-                        echo "<h2>no telpon</h2>";
-                        echo nl2br('<p class="p">'.$data['alamat'].'</p>');
-                        echo "<h2>email</h2>";
-                        echo nl2br('<p class="p">'.$data['rutemap'].'</p>');
-                    }
-                } else{
-                    echo '
-                    <tr>
-                        <td colspan="6">Tidak ada data.</td>
-                    </tr>
-                    ';
-                }
-            ?>
+    <header id="header" class="header fixed-top d-flex align-items-center">
+        <?php include '../../components/navbar.php'; ?>
+    </header>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="<?php echo $gambarPath; ?>" alt="" style="width:100%;">
+            </div>
+            <div class="col-md-6">
+                <h2><?php echo $nama; ?></h2>
+                <p><?php echo $alamat; ?></p>
+                <p><?php echo $deskripsi; ?></p>
+                <a href="../../index.php" class="btn btn-primary">Kembali</a>
+            </div>
         </div>
-  
     </div>
-
 </body>
 
 </html>
