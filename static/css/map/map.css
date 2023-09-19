@@ -1,0 +1,82 @@
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    background: rgba(46, 204, 113, 1);
+    color: white;
+}
+
+.leaflet-popup-close-button {
+    color: rgba(39, 174, 96, 1.0) !important;
+}
+
+.leaflet-popup-close-button:hover {
+    color: white !important;
+}
+
+li {
+    list-style-type: none;
+    margin: .5em auto;
+}
+
+li img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: white;
+}
+
+li i {
+    padding: 5px;
+}
+
+li h2 {
+    margin-top: 0;
+}
+
+.matos {
+    margin-bottom: .75em;
+}
+
+
+/* CSS for the marker animation */
+.cusPinIcon {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.cusPinIcon.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background-color: #fff;
+    color:#333;
+    font-size: 16px;
+    transform: translateY(-30px);
+  }
+
+
+
+  /* Gaya untuk kontainer gambar */
+.tplat .image-container {
+    position: relative;
+
+}
+
+
+/* Gaya untuk latar belakang gradasi hitam */
+.tplat .gradient-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+    padding: 10px; /* Sesuaikan dengan kebutuhan Anda */
+}
+
+/* Gaya untuk tombol */
+.tplat .btn-primary {
+    display: block;
+    margin: 0 auto;
+    margin-bottom:21px;
+}
