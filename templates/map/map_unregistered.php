@@ -1,6 +1,14 @@
 <?php
 session_start(); // Pastikan Anda memulai sesi di atas semua kode PHP
-
+// Di halaman lain setelah pengguna login
+if (isset($_SESSION['order_id'])) {
+    $orderId = $_SESSION['order_id'];
+    // Sekarang $orderId berisi nilai order ID yang dapat Anda gunakan.
+} else {
+    // Jika sesi orderId tidak ada, Anda dapat menangani ini sesuai kebutuhan Anda, misalnya mengarahkan pengguna kembali ke halaman login.
+    header("Location: ../login/login.php");
+    exit;
+}
 // Periksa apakah session username sudah ada dan valid
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
