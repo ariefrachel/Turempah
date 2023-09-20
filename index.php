@@ -104,6 +104,8 @@ if ($sql && mysqli_num_rows($sql) > 0) {
         });
     });
 </script>
+
+<?php include 'templates/components/chatbot.php';?>
   </main>
  
   <footer id="footer" class="footer">
