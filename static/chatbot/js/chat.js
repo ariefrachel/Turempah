@@ -23,10 +23,12 @@ class InteractiveChatbox {
         if(this.state) {
             chatbox.classList.add('chatbox--active')
             chatbox.classList.add('msger-active')
+            chatbox.classList.add('fix')
             this.toggleIcon(true, button);
         } else if (!this.state) {
             chatbox.classList.remove('chatbox--active')
             chatbox.classList.remove('msger-active')
+            chatbox.classList.remove('fix')
             this.toggleIcon(false, button);
         }
     }

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('db/config.php');
 
 // Lakukan query ke database
@@ -62,6 +63,7 @@ if ($sql && mysqli_num_rows($sql) > 0) {
   <main id="main">
     <?php include 'templates/landingpage/hero.php';?>
     <?php include 'templates/landingpage/about.php';?>
+
     
 
     <section id="listtempat" class="herb-list" style="background-color: #fff;">
@@ -108,7 +110,7 @@ if ($sql && mysqli_num_rows($sql) > 0) {
     });
 </script>
 
-<?php include 'templates/components/chatbot.php';?>
+
   </main>
  
   <footer id="footer" class="footer">
@@ -116,7 +118,9 @@ if ($sql && mysqli_num_rows($sql) > 0) {
   </footer>
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
   <div id="preloader"></div>
+  <?php include 'templates/components/chatbot.php';?>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.1/lottie.min.js"></script>
 <script>
 

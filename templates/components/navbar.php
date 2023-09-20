@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 if(isset($_SESSION['username'])) {
     // Jika pengguna sudah login, ambil nilai 'status' dari database

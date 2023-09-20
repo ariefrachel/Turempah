@@ -1,4 +1,4 @@
-<div style="z-index: 999;" class="chatbox ">
+<div class="chatbox ">
     <section style="padding: inherit;" class="msger chatbox__support">
         
        
