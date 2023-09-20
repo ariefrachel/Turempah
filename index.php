@@ -118,7 +118,9 @@ if ($sql && mysqli_num_rows($sql) > 0) {
   </footer>
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  
+  <div style="z-index: 9999;" class="chatbox__button">
+            <button class="btn-tertiary">Chat</button>
+        </div>
   <div id="preloader"></div>
   <?php include 'templates/components/chatbot.php';?>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.1/lottie.min.js"></script>
