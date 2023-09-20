@@ -48,6 +48,9 @@ if ($sql && mysqli_num_rows($sql) > 0) {
   <link href="static/css/main.css" rel="stylesheet">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- chatbot  -->
+    <link rel="stylesheet" href="static/chatbot/css/icon.css" />
+    <link rel="stylesheet" href="static/chatbot/css/style.css" />
 </head>
 
 <body>
