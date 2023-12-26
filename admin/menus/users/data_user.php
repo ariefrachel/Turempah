@@ -78,7 +78,7 @@ else
 }
 
 
-    echo "<td><a href='hapus.php?id=".$data['id']."' class='btn btn-danger'><i class='bi bi-trash-fill'></i> HAPUS </a></td>";
+    echo "<td><a href='hapus.php?id=".$data['id']."' class='btn btn-danger' onclick='return confirmDelete()'><i class='bi bi-trash-fill'></i> HAPUS </a></td>";
    
     }
      
@@ -92,4 +92,10 @@ else
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-table@1.21.0/dist/bootstrap-table.min.js"></script>
   </body>
+  <script>
+  function confirmDelete() {
+    return confirm("Apakah Anda yakin ingin menghapus data ini?");
+  }
+</script>
+
 </html>

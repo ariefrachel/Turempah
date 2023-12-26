@@ -49,6 +49,7 @@ include('../../db/config.php');
                                 <h5 class="card-title mt-3"><?php echo $nama; ?></h5>
                                 <p class="card-text" style="font-size:14px"><?php echo $alamat; ?></p>
                                 <a href="tempat.php?id=<?php echo $data['id']; ?>" class="btn btn-primary">Lihat Detail</a>
+                                <a href='hapus.php?id=<?php echo $data['id']; ?>' class='btn btn-danger' onclick='return confirmDelete()'><i class='bi bi-trash-fill'></i>Hapus</a>
                             </div>
                         </div>
                     </div>
@@ -62,5 +63,9 @@ include('../../db/config.php');
         </div>
     </div>
 </body>
-
+<script>
+    function confirmDelete() {
+        return confirm("Apakah Anda yakin ingin menghapus data ini?");
+    }
+</script>
 </html>

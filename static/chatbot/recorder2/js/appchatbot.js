@@ -139,7 +139,7 @@ function createDownloadLink(blob) {
 	var filesend= filename+".wav"
 	var fd=new FormData();
 	fd.append("audio_data",blob, filesend);
-	xhr.open("POST","http://127.0.0.1:5000/listen_audio",true);
+	xhr.open("POST","http://192.168.43.91:5000/listen_audio",true);
 	xhr.send(fd);
 
 	//add the li element to the ol

@@ -75,6 +75,7 @@ $data = mysqli_fetch_assoc($sql);
 
         if ($con->query($sql) === TRUE) {
             echo "Data berhasil ditambahkan.";
+            header("Location: http://localhost/rempahtour/admin/menus/tempat/list_tempat.php");
         } else {
             echo "Error: " . $sql . "<br>" . $con->error;
         }

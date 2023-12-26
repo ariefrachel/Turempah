@@ -48,7 +48,7 @@
                 </button>
                 <button id="listenButton">
                     <div class="circle">
-                        <i class="fa fa-microphone" id="microphoneIcon" style="font-size: 50px; color: white"></i>
+                        <i class="fa fa-microphone" id="microphoneIcon" style="font-size: 24px; color: #CD543A"></i>
                     </div>
                 </button>
 
@@ -113,7 +113,8 @@
 
     function botResponse(rawText) {
         // Bot Response
-        $.get("http://127.0.0.1:5000/get", {
+        console.log(rawText)
+        $.get("http://192.168.43.91:5000/get", {
             msg: rawText
         }).done(function(data) {
             console.log(rawText);
